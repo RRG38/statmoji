@@ -30,7 +30,7 @@ export default class Landing extends Component {
         </span>
         <span class="buttons">
           <button onClick={this.handleLogin}>Login</button>
-          <button onClick={this.handleRegister}>Register</button>
+          <button onClick={this.handleRegister}>Create a Free Account</button>
         </span>
       </div>
     );
