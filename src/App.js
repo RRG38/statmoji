@@ -7,7 +7,6 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <div>Statmoji</div>
         {routes}
       </div>
     </BrowserRouter>
