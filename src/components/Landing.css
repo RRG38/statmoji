@@ -1,36 +1,49 @@
 h1 {
+  display: flex;
+  justify-content: center;
   text-align: center;
   font-size: 36pt;
 }
 
 h2 {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
-img {
-  display: block;
+.email {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
-span.email {
-  display: block;
+.password {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
-span.password {
-  display: block;
+.buttons {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
 
-span.buttons {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+/* For width smaller than 400px: */
+body {
+  background-repeat: no-repeat;
+  background-image: url('https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_large.png?v=1571606036'); 
+}
+
+/* For width 400px and larger: */
+@media only screen and (min-width: 400px) {
+  body { 
+     background-image: url('https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_large.png?v=1571606036'); 
+  }
 }

@@ -7,8 +7,8 @@ export default class Landing extends Component {
       <div>
         <h1>Statmoji</h1>
         <h2>Your Life Stats Emojified</h2>
-        <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_large.png?v=1571606036" alt="Smiley Face"/>
-        <span class="email">
+        {/* <img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Smiling_Face_Emoji_large.png?v=1571606036" alt="Smiley Face"/> */}
+        <div class="email">
           <label>Email</label>
             <input
                   type='text'
@@ -17,8 +17,8 @@ export default class Landing extends Component {
                   name='email'
                   // onChange={this.handleInputChange}
             />
-        </span>
-        <span class="password">
+        </div>
+        <div class="password">
           <label>Password</label>
             <input
                   type='text'
@@ -27,11 +27,11 @@ export default class Landing extends Component {
                   name='password'
                   // onChange={this.handleInputChange}
             />
-        </span>
-        <span class="buttons">
+        </div>
+        <div class="buttons">
           <button onClick={this.handleLogin}>Login</button>
           <button onClick={this.handleRegister}>Create a Free Account</button>
-        </span>
+        </div>
       </div>
     );
   };
