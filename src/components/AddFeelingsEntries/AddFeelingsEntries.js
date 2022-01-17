@@ -6,9 +6,7 @@ const AddFeelingsEntries = () => {
   return (
     <div>
       <Nav />
-      <div>
-        Hi Feelings
-      </div>
+      <div className='title-container'> How am I Feeling? </div>
     </div>
   )
 }
