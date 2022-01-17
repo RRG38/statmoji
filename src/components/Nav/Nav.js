@@ -3,13 +3,12 @@ import './Nav.css'
 
 const Nav = () => {
   return(
-    <div className='header-parent'>
-      <span className='email'>ryangolf@email.com</span>
-      <div className='menu-button'>
-        <span className="material-icons menu-icon">menu</span>
-        <div>MENU</div>
+    <div className='nav-parent'>
+      <div className='nav-title-email-parent'>
+        <div className='email'>ryangolf@email.com</div>
+        <div className='title'>Statmoji.app</div>
       </div>
-      <div className='title'>Statmoji.app</div>
+      <button className="material-icons menu-icon">menu</button>
     </div>
   )
 }
