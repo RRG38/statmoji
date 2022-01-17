@@ -1,12 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const massive = require('massive')
 const session = require('express-session')
 const authCtrl = require('./controllers/authCtrl')
 // const authenticateUser = require('./middlewares/authenticateUser')
 
-const { PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 
 app.use(express.json())
 
@@ -19,10 +20,21 @@ app.use(session({
   }
 }))
 
+app.use(cors())
+
+
+
+
 //auth endpoints
-app.post('/auth/register', authCtrl.register)
-app.post('/auth/login', authCtrl.login)
-app.delete('/auth/logout', authCtrl.logout)
+app.post('/api/auth/register', authCtrl.register)
+app.post('/api/auth/login', authCtrl.login)
+app.delete('/api/auth/logout', authCtrl.logout)
+
+
+
+
+
+
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -32,6 +44,6 @@ massive({
 })
 .then(dbInstance => {
   app.set('db', dbInstance)
-  app.listen(PORT, () => console.log(`DB up & Server running on ${PORT}`))
+  app.listen(SERVER_PORT, () => console.log(`DB up & Server running on ${SERVER_PORT}`))
 })
 .catch(err => console.log(err))

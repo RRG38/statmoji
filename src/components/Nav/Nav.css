@@ -1,0 +1,22 @@
+.header-parent {
+  background-color:black;
+  display: flex;
+  width: 320px;
+}
+
+.email {
+  color: white;
+}
+
+.menu-button {
+  background-color: #dddddd;
+  color: black
+}
+.material-icons.menu-icon {
+   font-size: 48px;
+   color: black
+ }
+
+.title {
+  color: white;
+}
