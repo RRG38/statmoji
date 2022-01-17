@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
 
-module.exports = { 
+module.exports = {
   register: async (req, res) => {
     const db = req.app.get('db')
 
@@ -21,10 +21,10 @@ module.exports = {
 
       // add the user to the db and get back their id
       const [ newUser ] = await db.register_user(email, hash)
-    
+
       // create a session for the user using the db response
       req.session.user = newUser
-    
+
       // send a response that includes the user session info
       res.status(200).send(newUser)
 
@@ -34,7 +34,7 @@ module.exports = {
     }
   },
   login: (req, res) => {
-    // get db instance 
+    // get db instance
     const db = req.app('db')
 
     // get necessary info from req.body
@@ -58,10 +58,10 @@ module.exports = {
         // send the response and session to the front
         res.status(200).send(req.session.user)
       })
-    
+
   },
   logout: (req, res) => {
     req.session.destroy()
-    res.sendStatus(200)
+    res.sendStatus(200).send('User logged out')
   }
 }

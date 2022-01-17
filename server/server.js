@@ -24,11 +24,6 @@ app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout)
 
-// //protected routes
-// app.get('/api/secret', authenticateUser, (req, res) => {
-//   res.status(200).send("Here's the secret!")
-// })
-
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {

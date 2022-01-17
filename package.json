@@ -1,7 +1,8 @@
 {
   "name": "statmoji",
   "version": "0.1.0",
-  "main": "server/index.js",
+  "main": "server/server.js",
+  "proxy": "http://localhost:3838",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
