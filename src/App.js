@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
 import routes from './routes';
-// import { Link } from 'react-router-dom';
+// import Nav from './components/Nav'
+import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>  
+      <>
+        {/* <Nav />  */}
         {routes}
-      </div>
-    </BrowserRouter>
+      </>
   );
 }
 

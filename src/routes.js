@@ -1,13 +1,14 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Landing from './components/Landing';
-import Today from './components/Today';
-import Past from './components/Past';
+import { Route, Switch } from 'react-router-dom';
+import Auth from './components/Auth/Auth'
+import MainMenu from './components/MainMenu/MainMenu'
+import AddFeelingsEntries from './components/AddFeelingsEntries/AddFeelingsEntries';
 
 export default (
   <Switch>
-    <Route component={Landing} exact path='/' /> 
-    <Route component={Today} path='/today' />
-    <Route component={Past} path='/past' />
+    <Route exact path='/' component={ Auth } />
+    <Route path='/main-menu' component={ MainMenu } />
+    <Route path='/add-feelings-entries' component={ AddFeelingsEntries } />
   </Switch>
 );
+
