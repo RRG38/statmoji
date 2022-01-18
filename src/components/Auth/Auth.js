@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Auth.css'
 
 import logo from '../../assets/statmoji-logo.png'
 
-const Auth = () => {
+const Auth = (props) => {
+
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+  const [registerEmail, setRegisterEmail] = useState('')
+  const [registerPassword, setRegisterPassword] = useState('')
+
+
+
   return (
     <div className='auth-parent'>
       <header className='auth-header'>
@@ -11,8 +19,8 @@ const Auth = () => {
       </header>
       <div className='login-container'>
         <div className='login-inputs-container'>
-          <input placeholder='Email'></input>
-          <input placeholder='Password'></input>
+          <input placeholder='Email' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
+          <input placeholder='Password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
         </div>
         <button> Login </button>
       </div>
@@ -21,11 +29,9 @@ const Auth = () => {
         <div> Statmoji is a web app where you can use emojis to help track your life stats. </div>
       </section>
       <div className='register-container'>
-
-          Want a Free Account?
-          <input placeholder='Email'></input>
-          <input placeholder='Password'></input>
-
+        Want a Free Account?
+        <input placeholder='Email' value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} />
+        <input placeholder='Password' value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} />
         <button> Create Account </button>
       </div>
     </div>

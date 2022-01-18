@@ -63,8 +63,8 @@ const AddFeelingsEntries = () => {
           </div>
 
           <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
-            <div className='emoji-icon'> 🤔	</div>
-            <div className='emoji-text'> Thinking </div>
+            <div className='emoji-icon'> 😋	</div>
+            <div className='emoji-text'> Hungry </div>
           </div>
           <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
             <div className='emoji-icon' > 😀	</div>
@@ -87,8 +87,8 @@ const AddFeelingsEntries = () => {
           </div>
 
           <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
-            <div className='emoji-icon'> 😠	</div>
-            <div className='emoji-text'> Angry </div>
+            <div className='emoji-icon'> 😋	</div>
+            <div className='emoji-text'> Hungry </div>
           </div>
 
           <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>

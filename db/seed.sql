@@ -1,5 +1,9 @@
 DROP TABLE IF EXISTS users;
 
+DROP TABLE IF EXISTS feelings_entries;
+
+DROP TABLE IF EXISTS feelings_emojis;
+
 CREATE TABLE users
 (
   id SERIAL PRIMARY KEY,
@@ -10,6 +14,26 @@ CREATE TABLE users
 INSERT INTO users
 (email, hash)
 VALUES
-('ryan@email.com', '$2a$10$wZUxoi7vsBOeHK3zhiY4H.Nc5WvuyukqmsGjat9XMGl40w3/RhdiW'),
-('elizabeth@email.com', '$2a$10$KFR1RUO0JiFtCoux3mnJaemV6Ifnk0BOTdjm/VWh.uOZ97pD3X1Re'),
-('kelsey@email.com', '$2a$10$dgo.HRAecEhFl8L0h.lJM.OeM2t8y5Pi3AmiBlfCXUIIS/PUtfwd.');
+('ryan@email.com', '$2a$10$wZUx'),
+('elizabeth@email.com', '$2a$10$KFR'),
+('kelsey@email.com', '$2a$10$dgo.HRAecEhF');
+
+CREATE TABLE feelings_entries
+(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  date TIMESTAMP,
+  emoji_id INTEGER
+);
+
+CREATE TABLE feelings_emojis
+(
+  id SERIAL PRIMARY KEY,
+  feelings_emoji_icon TEXT,
+  feelings_emoji_description TEXT
+);
+
+INSERT INTO feelings_emojis
+(feelings_emoji_icon, feelings_emoji_description)
+VALUES
+('😀', 'Happy');
