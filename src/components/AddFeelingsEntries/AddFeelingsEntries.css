@@ -1,55 +1,41 @@
-.title-container {
-  width: 300px;
-  height: 50px;
-  background-color: #242424;
-  margin: 10px;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-  color: #dddddd;
+.feelings-title-container {
+  margin: 2%;
+  color: #000000;
   text-align: center;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 2rem;
 }
 
-.display-recent-entries-container {
-  box-sizing: border-box;
-  width: 300px;
-  height: 275px;
+.display-recent-feelings-container {
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
   background-color: #dddddd;
-  margin: 10px;
+  margin: 2%;
   text-align: center;
-  font-size: 15px;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.feelings-text {
-  width: 320px;
-  text-align: center;
-}
-
 .view-all-feelings-button {
-  width: 90px;
-  height: 30px;
   background-color: #242424;
   color: white;
+  text-align: center;
+  margin: 1%;
+}
+
+.feelings-text {
   text-align: center;
 }
 
 .available-feelings-emojis-container {
-  width: 300px;
-  height: 270px;
   background-color: #ffffff;
-  box-sizing: border-box;
-  margin: 10px;
+  margin: 2%;
   border: solid black thin;
-}
-
-.emoji-three-set {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .emoji-container {
@@ -60,10 +46,12 @@
 }
 
 .emoji-icon {
-  font-size: 50px;
+  font-size: 4rem;
 }
 
 .emoji-text {
-  font-size: 15px;
+  font-size: 1rem;
 }
+
+
 

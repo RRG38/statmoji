@@ -16,7 +16,7 @@ const MainMenu = () => {
         <button className='main-menu-button'   > VIEW ALL MY PAST STATS </button>
         <button className='main-menu-button'   > ABOUT STATMOJI </button>
         <button className='main-menu-button' > CHANGE COLOR PREFERENCES </button>
-        <button className='main-menu-button'   > CONTACT US </button>
+        <button className='main-menu-button'   > GIVE US FEEDBACK </button>
         <button className='main-menu-button'   > BECOME A SUPPORTER </button>
       </div>
     </div>
