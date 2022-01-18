@@ -1,67 +1,27 @@
 const bcrypt = require('bcryptjs')
+const db = (req) => req.app.get('db')
 
 module.exports = {
-  register: async (req, res) => {
-    const db = req.app.get('db')
+  register: async (req, res ) => {
+    const { email, password } = req.body;
 
-    // receive the information to eventually add a new user
-    const { email, password } = req.body
-
-    // check if an existing user matches the email trying to be registered with, if so, reject (using async await instead of .then)
     try {
-      const [existingUser] = await db.get_user_by_email(email)
-
-      if (existingUser) {
-        return res.status(409).send('User already exists')
-      }
-
-      // hash and salt the password
-      const salt = bcrypt.genSaltSync(10)
-      const hash = bcrypt.hashSync(password, salt)
-
-      // add the user to the db and get back their id
-      const [ newUser ] = await db.register_user(email, hash)
-
-      // create a session for the user using the db response
-      req.session.user = newUser
-
-      // send a response that includes the user session info
-      res.status(200).send(newUser)
-
-    } catch(err) {
-      console.log(err)
-      return res.sendStatus(500)
+        const result = await db(req).get_user([email]);
+        const existingUser = result[0];
+        if (existingUser){
+            return res.status(409).json('Username taken');
+        } else {
+            const hash = bcrypt.hashSync(password);
+            const registeredUser = await db(req).register_user([email, hash]);
+            const user = registeredUser[0];
+            req.session.user = {
+                id: user.id,
+                email: user.email
+            };
+            return res.status(201).send(req.session.user);
+        }
+    } catch (err) {
+        console.log(`Error registering user: ${err}`);
     }
-  },
-  login: (req, res) => {
-    // get db instance
-    const db = req.app('db')
-
-    // get necessary info from req.body
-    const { email, password } = req.body
-
-    // check if that user exist, if they do NOT, reject request
-    db.get_user_by_email(email)
-      .then(([existingUser]) => {
-        if (!existingUser) {
-          return res.status(403).send('Incorrect email')
-        }
-        // compare the password from req.body with the stored hash that we just retrieved..if mismatch, reject
-        const isAuthenticated = bcrypt.compareSync(password, existingUser.hash)
-
-        if (!isAuthenticated) {
-          return res.status(403).send('Incorrect password')
-        }
-        // set up our session and be sure to not include the hash in the session
-        delete existingUser.hash
-        req.session.user = existingUser
-        // send the response and session to the front
-        res.status(200).send(req.session.user)
-      })
-
-  },
-  logout: (req, res) => {
-    req.session.destroy()
-    res.sendStatus(200).send('User logged out')
   }
 }

@@ -1,13 +1,14 @@
 require('dotenv').config()
 const express = require('express')
-const app = express()
 const cors = require('cors')
 const massive = require('massive')
 const session = require('express-session')
 const authCtrl = require('./controllers/authCtrl')
-// const authenticateUser = require('./middlewares/authenticateUser')
+
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
+
+const app = express()
 
 app.use(express.json())
 
@@ -27,8 +28,8 @@ app.use(cors())
 
 //auth endpoints
 app.post('/api/auth/register', authCtrl.register)
-app.post('/api/auth/login', authCtrl.login)
-app.delete('/api/auth/logout', authCtrl.logout)
+// app.post('/api/auth/login', authCtrl.login)
+// app.delete('/api/auth/logout', authCtrl.logout)
 
 
 
