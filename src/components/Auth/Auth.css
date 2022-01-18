@@ -1,13 +1,13 @@
 .auth-parent {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  /* width: 700px; */
 }
 
 .auth-header {
   display: flex;
   height: 75px;
-  width: 320px;
+  /* width: 700px; */
   background-color: #000000;
   color: white;
   justify-content: center;

@@ -3,15 +3,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  box-sizing: border-box;
-  width: 320px;
-  height: 75px;
-  padding: 10px;
+  /* box-sizing: border-box; */
+  /* width: 320px; */
+  /* height: 5vh; */
+  padding: 2%;
+  /* margin: 1%; */
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
 .material-icons.menu-icon {
-   font-size: 48px;
+   font-size: 2rem;
    color: black
  }
 
@@ -23,12 +24,12 @@
  }
 
 .email {
-  font-size: 10px;
+  font-size: 1rem;
   text-align: right;
   color: #dddddd;
 }
 
 .title {
   color: white;
-  font-size: 35px;
+  font-size: 2rem;
 }
