@@ -9,3 +9,61 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+.display-recent-entries-container {
+  box-sizing: border-box;
+  width: 300px;
+  height: 275px;
+  background-color: #dddddd;
+  margin: 10px;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.feelings-text {
+  width: 320px;
+  text-align: center;
+}
+
+.view-all-feelings-button {
+  width: 90px;
+  height: 30px;
+  background-color: #242424;
+  color: white;
+  text-align: center;
+}
+
+.available-feelings-emojis-container {
+  width: 300px;
+  height: 270px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  margin: 10px;
+  border: solid black thin;
+}
+
+.emoji-three-set {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.emoji-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+}
+
+.emoji-icon {
+  font-size: 50px;
+}
+
+.emoji-text {
+  font-size: 15px;
+}
+
