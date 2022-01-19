@@ -27,9 +27,10 @@ app.use(cors())
 
 
 //auth endpoints
+// app.get('/auth/getUser', authCtrl.getUser) don't think I need
 app.post('/auth/register', authCtrl.register)
-// app.post('/auth/login', authCtrl.login)
-// app.delete('/auth/logout', authCtrl.logout)
+app.post('/auth/login', authCtrl.login)
+app.delete('/auth/logout', authCtrl.logout)
 
 
 
