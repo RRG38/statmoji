@@ -51,14 +51,14 @@ module.exports = {
         }
     },
 
-    // getUser: async (req, res) => {
-    //     try {
-    //         const user = await db(req).get_user(req.body.email);
-    //         return res.status(200).send(user);
-    //     } catch (err) {
-    //         console.log(`Error retrieving user: ${err}`);
-    //     }
-    // },
+    getUser: async (req, res) => {
+        try {
+            const user = await db(req).get_user(req.body.email);
+            return res.status(200).send(user);
+        } catch (err) {
+            console.log(`Error retrieving user: ${err}`);
+        }
+    },
 
     logout: async (req, res) => {
         req.session.destroy();

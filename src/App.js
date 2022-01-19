@@ -1,13 +1,45 @@
-import React from 'react';
-import routes from './routes';
 import './App.css'
 
-function App() {
+import { connect } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import routes from './routes';
+
+const App = (props) => {
+
+  // const [loggedInStatus, setLoggedInStatus ] = useState(false);
+  // const history = useHistory();
+
+
+
+  // useEffect(() => {
+  //   setLoggedInStatus(props.state.loggedIn);
+  //   if (!props.state.loggedIn){
+  //     history.push("/main-menu");
+  //   }
+  // }, [props.state])
+
   return (
-      <>
-        {routes}
-      </>
-  );
+      <div className='App'>
+        {/* {!loggedInStatus} */}
+
+        {/* {loggedInStatus &&
+          <main>
+            {routes}
+          </main>
+
+        } */}
+          {routes}
+      </div>
+  )
 }
 
-export default App;
+const mapStateToProps = (reduxState) => {
+
+  return {
+    state: reduxState
+  }
+}
+
+export default connect(mapStateToProps)(App);

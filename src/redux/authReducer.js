@@ -43,7 +43,6 @@ export default function reducer(state=initialState, action){
             return {
                 ...state,
                 loggedIn: true,
-                username: action.payload.username,
                 email: action.payload.email
             }
         }

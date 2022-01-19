@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
 import './Auth.css'
-
 import logo from '../../assets/statmoji-logo.png'
+
+import React, { useState } from 'react';
+import { connect } from 'react-redux'
+
+
+import { loginUser } from '../../redux/authReducer'
 
 const Auth = (props) => {
 
@@ -10,7 +14,10 @@ const Auth = (props) => {
   const [registerEmail, setRegisterEmail] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
 
-
+  const login = () => {
+    const loginInfo = { loginEmail, loginPassword}
+    props.loginUser(loginInfo)
+  }
 
   return (
     <div className='auth-parent'>
@@ -22,7 +29,7 @@ const Auth = (props) => {
           <input placeholder='Email' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
           <input placeholder='Password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
         </div>
-        <button> Login </button>
+        <button onClick={login}> Login </button>
       </div>
       <section className='section-parent'>
         <img className='logo' src={logo} alt='Smiley face emoji' />
@@ -38,4 +45,12 @@ const Auth = (props) => {
   )
 }
 
-export default Auth
+const mapStateToProps = (reduxState) => {
+  return {
+    state: reduxState.state
+  }
+}
+
+const mapDispatchToProps = { loginUser }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth);
