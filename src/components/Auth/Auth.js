@@ -1,56 +1,110 @@
-import './Auth.css'
+import "./Auth.css";
 import logo from '../../assets/statmoji-logo.png'
 
-import React, { useState } from 'react';
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
+import { updateUser } from "../../redux/reducer";
 
-
-import { loginUser } from '../../redux/authReducer'
-
-const Auth = (props) => {
-
-  const [loginEmail, setLoginEmail] = useState('')
-  const [loginPassword, setLoginPassword] = useState('')
-  const [registerEmail, setRegisterEmail] = useState('')
-  const [registerPassword, setRegisterPassword] = useState('')
-
-  const login = () => {
-    const loginInfo = { loginEmail, loginPassword}
-    props.loginUser(loginInfo)
+class Auth extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+      errorMsg: "",
+    };
+    this.login = this.login.bind(this);
+    this.register = this.register.bind(this);
   }
 
-  return (
-    <div className='auth-parent'>
-      <header className='auth-header'>
-        Statmoji.app
-      </header>
-      <div className='login-container'>
-        <div className='login-inputs-container'>
-          <input placeholder='Email' value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} />
-          <input placeholder='Password' value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} />
+  handleChange(prop, val) {
+    this.setState({
+      [prop]: val,
+    });
+  }
+
+  login() {
+    const { email, password } = this.state;
+    axios
+      .post("/api/auth/login", this.state)
+      .then((res) => {
+        this.props.updateUser({ email, password });
+        this.props.history.push("/main-menu");
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ errorMsg: "Incorrect username or password!" });
+      });
+  }
+
+  register() {
+    const { email, password } = this.state;
+    axios
+      .post("/api/auth/register", this.state)
+      .then((res) => {
+        this.props.updateUser({ email, password });
+        this.props.history.push("/main-menu");
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ errorMsg: "Email already registered." });
+      });
+  }
+
+  closeErrorMessage = () => {
+    this.setState({
+      errorMsg: false,
+      email: "",
+      password: "",
+    });
+  };
+
+  render() {
+    return (
+      <div className='auth-parent'>
+        <header className='auth-header'>
+          Statmoji.app
+        </header>
+        <section className='section-parent'>
+          <img className='logo' src={logo} alt='Smiley face emoji' />
+          <div> Statmoji is a web app where you can use emojis to help track your life stats. </div>
+        </section>
+        <div className='register-container'>
+          {this.state.errorMsg && (
+            <h3 className="auth-error-msg">
+              {this.state.errorMsg}{" "}
+              <span onClick={this.closeErrorMessage}>X</span>
+            </h3>
+          )}
+          <input
+            value={this.state.email} type='email' placeholder="Email"
+            onChange={(e) => this.handleChange("email", e.target.value)}
+          />
+          <input
+            value={this.state.password}
+            type="password"
+            placeholder="Password"
+            onChange={(e) => this.handleChange("password", e.target.value)}
+          />
+          <div className="auth-button-container">
+            <button className="dark-button" onClick={this.login}>
+              {" "}
+              Login{" "}
+            </button>
+            <button className="dark-button" onClick={this.register}>
+              {" "}
+              Register{" "}
+            </button>
+          </div>
         </div>
-        <button onClick={login}> Login </button>
       </div>
-      <section className='section-parent'>
-        <img className='logo' src={logo} alt='Smiley face emoji' />
-        <div> Statmoji is a web app where you can use emojis to help track your life stats. </div>
-      </section>
-      <div className='register-container'>
-        Want a Free Account?
-        <input placeholder='Email' value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} />
-        <input placeholder='Password' value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} />
-        <button> Create Account </button>
-      </div>
-    </div>
-  )
-}
-
-const mapStateToProps = (reduxState) => {
-  return {
-    state: reduxState.state
+      )
   }
 }
 
-const mapDispatchToProps = { loginUser }
+export default connect(null, { updateUser })(Auth);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+
+
+

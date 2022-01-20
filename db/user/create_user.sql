@@ -1,5 +1,5 @@
 INSERT INTO users
-(email, hash)
+(email, password)
 VALUES
 ($1, $2)
-returning *;
+RETURNING *;

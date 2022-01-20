@@ -7,12 +7,12 @@ DROP TABLE IF EXISTS feelings_emojis;
 CREATE TABLE users
 (
   id SERIAL PRIMARY KEY,
-  email VARCHAR(120),
-  hash text
+  email VARCHAR NOT NULL,
+  password VARCHAR NOT NULL
 );
 
 INSERT INTO users
-(email, hash)
+(email, password)
 VALUES
 ('ryan@email.com', '$2a$10$wZUx'),
 ('elizabeth@email.com', '$2a$10$KFR'),

@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const massive = require('massive')
 const session = require('express-session')
-const authCtrl = require('./controllers/authCtrl')
+const userCtrl = require('./controllers/userCtrl')
 
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
@@ -27,11 +27,10 @@ app.use(cors())
 
 
 //auth endpoints
-app.get('/auth/getUser', authCtrl.getUser)
-app.post('/auth/register', authCtrl.register)
-app.post('/auth/login', authCtrl.login)
-app.delete('/auth/logout', authCtrl.logout)
-
+app.post("/api/auth/register", userCtrl.register);
+app.post("/api/auth/login", userCtrl.login);
+app.get("/api/auth/me", userCtrl.getUser);
+app.post("/api/auth/logout", userCtrl.logout);
 
 
 
