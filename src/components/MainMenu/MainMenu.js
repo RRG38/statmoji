@@ -1,10 +1,13 @@
 import './MainMenu.css'
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 
 const MainMenu = () => {
+
+  const history = useHistory()
+
   return (
     <div>
       <header className='main-menu-header'>
@@ -16,7 +19,7 @@ const MainMenu = () => {
       <div className='main-menu-content'>
         <button className='main-menu-button'> ADD FOOD/DRINK STATS </button>
         <button className='main-menu-button' > ADD ACTIVITIES STATS </button>
-        <Link className='main-menu-button' to='/add-feelings-entries'> ADD HOW I'M FEELING STATS </Link>
+        <button onClick={() => history.push('/add-feelings-entries')} className='main-menu-button' to='/add-feelings-entries'> ADD HOW I'M FEELING STATS </button>
         <button className='main-menu-button'   > VIEW ALL MY PAST STATS </button>
         <button className='main-menu-button'   > ABOUT STATMOJI </button>
         <button className='main-menu-button' > CHANGE COLOR PREFERENCES </button>
