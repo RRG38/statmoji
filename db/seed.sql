@@ -14,9 +14,9 @@ CREATE TABLE users
 INSERT INTO users
 (email, password)
 VALUES
-('ryan@email.com', '$2a$10$wZUx'),
-('elizabeth@email.com', '$2a$10$KFR'),
-('kelsey@email.com', '$2a$10$dgo.HRAecEhF');
+('ryan@email.com', 'ryan'),
+('elizabeth@email.com', 'elizabeth'),
+('kelsey@email.com', 'kelsey');
 
 CREATE TABLE feelings_entries
 (
@@ -29,11 +29,11 @@ CREATE TABLE feelings_entries
 CREATE TABLE feelings_emojis
 (
   id SERIAL PRIMARY KEY,
-  feelings_emoji_icon TEXT,
-  feelings_emoji_description TEXT
+  feelings_hex_code TEXT,
+  feelings_description TEXT
 );
 
 INSERT INTO feelings_emojis
-(feelings_emoji_icon, feelings_emoji_description)
+(feelings_hex_code, feelings_description)
 VALUES
-('😀', 'Happy');
+('1f600', 'Happy');

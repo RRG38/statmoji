@@ -25,11 +25,11 @@ class Auth extends Component {
   }
 
   login() {
-    const { email, password } = this.state;
+    const { email } = this.state;
     axios
       .post("/api/auth/login", this.state)
       .then((res) => {
-        this.props.updateUser({ email, password });
+        this.props.updateUser({ email });
         this.props.history.push("/main-menu");
       })
       .catch((err) => {
@@ -39,11 +39,11 @@ class Auth extends Component {
   }
 
   register() {
-    const { email, password } = this.state;
+    const { email } = this.state;
     axios
       .post("/api/auth/register", this.state)
       .then((res) => {
-        this.props.updateUser({ email, password });
+        this.props.updateUser({ email });
         this.props.history.push("/main-menu");
       })
       .catch((err) => {
@@ -61,6 +61,9 @@ class Auth extends Component {
   };
 
   render() {
+    // let hex = '1F617'
+    // let emo = String.fromCodePoint("0x"+hex)
+    // console.log(emo)
     return (
       <div className='auth-parent'>
         <header className='auth-header'>

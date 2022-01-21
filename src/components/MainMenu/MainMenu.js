@@ -11,6 +11,7 @@ const MainMenu = () => {
   return (
     <div>
       <header className='main-menu-header'>
+        <div className='main-menu-user-email'> dad@email.com </div>
           Statmoji.app
       </header>
       <div className='main-menu-title'>
