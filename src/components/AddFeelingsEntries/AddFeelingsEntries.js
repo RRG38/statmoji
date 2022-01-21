@@ -14,9 +14,9 @@ const AddFeelingsEntries = () => {
 
       <div className='display-recent-feelings-container'>
         <div> Recent Entries... </div>
-        <div> NEED TO TURN INTO COMPONENT</div>
-        <div> DISPLAYING ON EACH LINE ONE</div>
-        <div> OF THE THREE MOST RECENT ENTRIES</div>
+        <br></br>
+        <div> Empty </div>
+        <br></br>
         <button className='view-all-feelings-button'> VIEW ALL </button>
       </div>
 
@@ -102,17 +102,6 @@ const AddFeelingsEntries = () => {
             <div className='emoji-icon'> 🤢	</div>
             <div className='emoji-text'> Nauseated </div>
           </div>
-
-          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
-            <div className='emoji-icon'> 😟	</div>
-            <div className='emoji-text'> Worried </div>
-          </div>
-
-          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
-            <div className='emoji-icon'> 🤔	</div>
-            <div className='emoji-text'> Thinking </div>
-          </div>
-
       </div>
     </div>
   )

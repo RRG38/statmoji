@@ -25,6 +25,7 @@ const MainMenu = () => {
         <button className='main-menu-button' > CHANGE COLOR PREFERENCES </button>
         <button className='main-menu-button'   > GIVE US FEEDBACK </button>
         <button className='main-menu-button'   > BECOME A SUPPORTER </button>
+        <button className='main-menu-button'   > LOGOUT </button>
       </div>
     </div>
   )
