@@ -1,18 +1,22 @@
-import React from 'react'
-import Nav from '../Nav/Nav'
 import './MainMenu.css'
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const MainMenu = () => {
   return (
     <div>
-      <Nav />
+      <header className='main-menu-header'>
+          Statmoji.app
+      </header>
       <div className='main-menu-title'>
         <div> Menu </div>
       </div>
       <div className='main-menu-content'>
         <button className='main-menu-button'> ADD FOOD/DRINK STATS </button>
         <button className='main-menu-button' > ADD ACTIVITIES STATS </button>
-        <button className='main-menu-button'> ADD HOW I'M FEELING STATS </button>
+        <Link className='main-menu-button' to='/add-feelings-entries'> ADD HOW I'M FEELING STATS </Link>
         <button className='main-menu-button'   > VIEW ALL MY PAST STATS </button>
         <button className='main-menu-button'   > ABOUT STATMOJI </button>
         <button className='main-menu-button' > CHANGE COLOR PREFERENCES </button>

@@ -71,6 +71,7 @@ class Auth extends Component {
           <div> Statmoji is a web app where you can use emojis to help track your life stats. </div>
         </section>
         <div className='register-container'>
+          Want a free account?
           {this.state.errorMsg && (
             <h3 className="auth-error-msg">
               {this.state.errorMsg}{" "}
