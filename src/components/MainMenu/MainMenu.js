@@ -1,17 +1,39 @@
 import './MainMenu.css'
 
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { Component } from 'react'
+import axios from 'axios'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { updateUser, logout } from '../../redux/reducer';
 
 
-const MainMenu = () => {
+class MainMenu extends Component {
+  constructor(props) {
+    super(props);
 
-  const history = useHistory()
+    this.logout = this.logout.bind(this);
+    this.getUser = this.getUser.bind(this);
+  }
 
-  return (
+  componentDidMount() {
+    this.getUser()
+  }
+
+  getUser() {
+    axios.get('/api/auth/me')
+    .then(res => this.props.updateUser(res.data) )
+  }
+
+  logout() {
+    axios.post('/api/auth/logout')
+      .then(_ => this.props.logout())
+  }
+
+  render() {
+  return this.props.location.pathname !== '/' &&
     <div>
       <header className='main-menu-header'>
-        <div className='main-menu-user-email'> dad@email.com </div>
+        <div className='main-menu-user-email'> {this.props.email} </div>
           Statmoji.app
       </header>
       <div className='main-menu-title'>
@@ -20,16 +42,23 @@ const MainMenu = () => {
       <div className='main-menu-content'>
         <button className='main-menu-button'> ADD FOOD/DRINK STATS </button>
         <button className='main-menu-button' > ADD ACTIVITIES STATS </button>
-        <button onClick={() => history.push('/add-feelings-entries')} className='main-menu-button' to='/add-feelings-entries'> ADD HOW I'M FEELING STATS </button>
+        <Link to='/add-feelings-entries' ><button className='main-menu-button'> ADD HOW I'M FEELING STATS </button></Link>
         <button className='main-menu-button'   > VIEW ALL MY PAST STATS </button>
         <button className='main-menu-button'   > ABOUT STATMOJI </button>
         <button className='main-menu-button' > CHANGE COLOR PREFERENCES </button>
         <button className='main-menu-button'   > GIVE US FEEDBACK </button>
         <button className='main-menu-button'   > BECOME A SUPPORTER </button>
-        <button className='main-menu-button'   > LOGOUT </button>
+        <Link to='/' ><button className='main-menu-button'   > LOGOUT </button></Link>
       </div>
     </div>
-  )
+  }
 }
 
-export default MainMenu
+const mapStateToProps = (state) => {
+  return {
+    email: state.email
+
+  }
+}
+
+export default withRouter(connect(mapStateToProps, { updateUser, logout})(MainMenu));
