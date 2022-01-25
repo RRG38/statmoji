@@ -40,6 +40,7 @@ class MainMenu extends Component {
         <div> Menu </div>
       </div>
       <div className='main-menu-content'>
+        <div className='main-menu-container'>
         <button className='main-menu-button'> ADD FOOD/DRINK STATS </button>
         <button className='main-menu-button' > ADD ACTIVITIES STATS </button>
         <Link to='/add-feelings-entries' ><button className='main-menu-button'> ADD HOW I'M FEELING STATS </button></Link>
@@ -49,6 +50,7 @@ class MainMenu extends Component {
         <button className='main-menu-button'   > GIVE US FEEDBACK </button>
         <button className='main-menu-button'   > BECOME A SUPPORTER </button>
         <Link to='/' ><button className='main-menu-button'   > LOGOUT </button></Link>
+      </div>
       </div>
     </div>
   }

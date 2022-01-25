@@ -4,13 +4,13 @@
   background-color: #000000;
   color: white;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 10vw;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-  padding: 2%;
+  /* padding: 2%; */
 }
 
 .main-menu-user-email {
-  font-size: small;
+  font-size: 4vw;
   margin: 2%;
   color: #dddddd;
 }
@@ -19,36 +19,64 @@
   margin: 2%;
   color: black;
   text-align: center;
-  font-size: xx-large;
+  background-color: #eeeeee;
+  font-size: 6vw;
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
 .main-menu-content {
-  background-color: #dddddd;
+  background-color: #ffffff;
   margin: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  justify-content: space-around;
+  height: 80vh;
+  /* box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8); */
 }
 
 .main-menu-button {
   background-color: #242424;
-  color: white;
+  color: #dddddd;
   text-align: center;
-  padding: 3%;
-  margin: 5%;
+  /* padding: 3%;
+  margin: 5%; */
+  width: 60vw;
+  /* height: 40vh; */
+  font-size: 5vw;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+.main-menu-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 @media (min-width: 600px) {
-  .main-menu-content {
-    background-color: #dddddd;
+  .main-menu-header {
+    font-size: 6vw;
+  }
+  .main-menu-button {
+    font-size: 3vw;
+    padding: 2%;
     margin: 2%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }
+  .main-menu-content {
+    background-color: gray;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: white;
+  box-shadow: none;
+  /* overflow: hidden; */
+  }
+  .main-menu-container {
+    height: 100vh;
+    justify-content: flex-start;
   }
 }
 
