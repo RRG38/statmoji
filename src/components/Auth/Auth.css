@@ -63,10 +63,13 @@
 }
 
 @media (min-width: 400px) {
+  .auth-header {
+    font-size: 8vw;
+  }
   .section-parent {
     display: flex;
     flex-direction: row;
-    font-size: 6vw;
+    font-size: 5vw;
   }
   .auth-description {
     font-size: 5vw;
@@ -75,4 +78,31 @@
     height: 60vh
   }
 }
+
+@media (min-width: 600px) {
+  .auth-header {
+    font-size: 5vw;
+  }
+  .section-parent {
+    display: flex;
+    flex-direction: row;
+    font-size: 5vw;
+  }
+  .auth-description {
+    font-size: 4vw;
+  }
+  .register-container {
+    height: 60vh
+  }
+  .auth-input {
+    font-size: 4vw;
+  }
+  .dark-button {
+    font-size: 4vw;
+  }
+  .register-container {
+    font-size: 3vw;
+  }
+}
+
 
