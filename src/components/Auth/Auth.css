@@ -8,7 +8,7 @@
   background-color: #000000;
   color: white;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 15vw;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
@@ -33,6 +33,7 @@
   align-items: center;
   text-align: center;
   padding: 2%;
+  font-size: 6vw;
 }
 
 .register-container {
@@ -40,11 +41,38 @@
   flex-direction: column;
   background-color: #242424;
   margin: 20px;
-  padding: 10px;
-  height: 250px;
+  padding: 2%;
+  height: 40vh;
+  font-size: 6vw;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
   color: white;
   align-items: center;
   justify-content: space-evenly;
+}
+.dark-button {
+  font-size: 6vw;
+}
+.auth-input {
+  font-size: 6vw;
+}
+.auth-button-container {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  justify-content: space-between;
+}
+
+@media (min-width: 400px) {
+  .section-parent {
+    display: flex;
+    flex-direction: row;
+    font-size: 6vw;
+  }
+  .auth-description {
+    font-size: 5vw;
+  }
+  .register-container {
+    height: 60vh
+  }
 }
 

@@ -71,7 +71,7 @@ class Auth extends Component {
         </header>
         <section className='section-parent'>
           <img className='logo' src={logo} alt='Smiley face emoji' />
-          <div> Statmoji is a web app where you can use emojis to help track your life stats. </div>
+          <div className='auth-description'> Statmoji is a web app where you can use emojis to help track your life stats. </div>
         </section>
         <div className='register-container'>
           Want a free account?
@@ -81,11 +81,11 @@ class Auth extends Component {
               <span onClick={this.closeErrorMessage}>X</span>
             </h3>
           )}
-          <input
+          <input className='auth-input'
             value={this.state.email} type='email' placeholder="Email"
             onChange={(e) => this.handleChange("email", e.target.value)}
           />
-          <input
+          <input className='auth-input'
             value={this.state.password}
             type="password"
             placeholder="Password"
