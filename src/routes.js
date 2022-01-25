@@ -2,13 +2,13 @@
 import { Route, Switch } from 'react-router-dom';
 import Auth from './components/Auth/Auth'
 import MainMenu from './components/MainMenu/MainMenu'
-import AddFeelingsEntries from './components/AddFeelingsEntries/AddFeelingsEntries';
+import FeelingsEntries from './components/FeelingsEntries/FeelingsEntries';
 
 export default (
   <Switch>
     <Route exact path='/' component={ Auth } />
     <Route path='/main-menu' component={ MainMenu } />
-    <Route path='/add-feelings-entries' component={ AddFeelingsEntries } />
+    <Route path='/add-feelings-entries' component={ FeelingsEntries } />
   </Switch>
 );
 

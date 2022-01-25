@@ -61,9 +61,6 @@ class Auth extends Component {
   };
 
   render() {
-    // let hex = '1F617'
-    // let emo = String.fromCodePoint("0x"+hex)
-    // console.log(emo)
     return (
       <div className='auth-parent'>
         <header className='auth-header'>
