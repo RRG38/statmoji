@@ -4,6 +4,7 @@ const cors = require('cors')
 const massive = require('massive')
 const session = require('express-session')
 const userCtrl = require('./controllers/userCtrl')
+const feelingsEntriesCtrl = require("./controllers/feelingsEntriesCtrl")
 
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
@@ -32,6 +33,11 @@ app.post("/api/auth/login", userCtrl.login);
 app.get("/api/auth/me", userCtrl.getUser);
 app.post("/api/auth/logout", userCtrl.logout);
 
+//feelings-entries endpoints
+app.get('/api/feelings-emojis', feelingsEntriesCtrl.getFeelingsEmojis)
+app.get('/api/feelings-entries/:id', feelingsEntriesCtrl.getUserFeelingsEntries)
+app.post('/api/feelings-entries', feelingsEntriesCtrl.createUserFeelingsEntry)
+app.delete('/api/feelings-entries/:id', feelingsEntriesCtrl.deleteUserFeelingsEntry)
 
 
 

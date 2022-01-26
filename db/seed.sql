@@ -21,9 +21,9 @@ VALUES
 CREATE TABLE feelings_entries
 (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER,
+  user_id INTEGER REFERENCES users(id),
   date TIMESTAMP,
-  emoji_id INTEGER
+  emoji_id INTEGER REFERENCES feelings_emojis(id)
 );
 
 CREATE TABLE feelings_emojis
