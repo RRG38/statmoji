@@ -19,13 +19,13 @@
   margin: 2%;
   color: black;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   font-size: 6vw;
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
 
 .main-menu-content {
-  background-color: #ffffff;
+  background-color: #dddddd;
   margin: 2%;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
 
 .main-menu-button {
   background-color: #242424;
-  color: #dddddd;
+  color: #ffffff;
   text-align: center;
   /* padding: 3%;
   margin: 5%; */
@@ -68,14 +68,14 @@
     margin: 2%;
   }
   .main-menu-content {
-    background-color: gray;
+    /* background-color: gray; */
   margin: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background-color: white;
+  background-color: #dddddd;
   box-shadow: none;
   /* overflow: hidden; */
   }
@@ -103,14 +103,13 @@
     margin: 2%;
   }
   .main-menu-content {
-    background-color: gray;
   margin: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100vh;
-  background-color: white;
+  background-color: #dddddd;
   box-shadow: none;
   /* overflow: hidden; */
   }

@@ -75,6 +75,34 @@ class FeelingsEntries extends Component {
             <div className='emoji-icon' > 😀	</div>
             <div className='emoji-text'> Happy </div>
           </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 😢	</div>
+            <div className='emoji-text'> Sad </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 😴	</div>
+            <div className='emoji-text'> Tired </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 😐	</div>
+            <div className='emoji-text'> Neutral </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 😠	</div>
+            <div className='emoji-text'> Angry </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 🤪	</div>
+            <div className='emoji-text'> Zany </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 🤢	</div>
+            <div className='emoji-text'> Nauseated </div>
+          </div>
+          <div className='emoji-container' onClick={() => alert('Function to Add to Past Stats')}>
+            <div className='emoji-icon'> 😟	</div>
+            <div className='emoji-text'> Worried </div>
+          </div>
         </div>
     </div>
     )
